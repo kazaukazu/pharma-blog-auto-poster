@@ -10,7 +10,10 @@
     },
     {
       "src": "server/src/index.ts",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "maxDuration": 30
+      }
     }
   ],
   "routes": [
@@ -23,11 +26,6 @@
       "dest": "/client/dist/$1"
     }
   ],
-  "functions": {
-    "server/src/index.ts": {
-      "maxDuration": 30
-    }
-  },
   "env": {
     "NODE_ENV": "production"
   }
