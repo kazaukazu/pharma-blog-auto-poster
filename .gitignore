@@ -5,8 +5,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Production builds
-/client/dist/
-/server/dist/
+dist/
 build/
 
 # Environment variables
