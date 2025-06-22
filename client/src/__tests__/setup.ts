@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom';
 import { TextEncoder, TextDecoder } from 'util';
+import React from 'react';
 
 // Polyfills for testing environment
 global.TextEncoder = TextEncoder;
@@ -56,18 +57,18 @@ jest.mock('react-hot-toast', () => ({
 // Mock Recharts components
 jest.mock('recharts', () => ({
   ResponsiveContainer: ({ children }: any) => children,
-  LineChart: ({ children }: any) => <div data-testid="line-chart">{children}</div>,
-  Line: () => <div data-testid="line" />,
-  XAxis: () => <div data-testid="x-axis" />,
-  YAxis: () => <div data-testid="y-axis" />,
-  CartesianGrid: () => <div data-testid="cartesian-grid" />,
-  Tooltip: () => <div data-testid="tooltip" />,
-  Legend: () => <div data-testid="legend" />,
-  BarChart: ({ children }: any) => <div data-testid="bar-chart">{children}</div>,
-  Bar: () => <div data-testid="bar" />,
-  PieChart: ({ children }: any) => <div data-testid="pie-chart">{children}</div>,
-  Pie: () => <div data-testid="pie" />,
-  Cell: () => <div data-testid="cell" />,
+  LineChart: ({ children }: any) => React.createElement('div', { 'data-testid': 'line-chart' }, children),
+  Line: () => React.createElement('div', { 'data-testid': 'line' }),
+  XAxis: () => React.createElement('div', { 'data-testid': 'x-axis' }),
+  YAxis: () => React.createElement('div', { 'data-testid': 'y-axis' }),
+  CartesianGrid: () => React.createElement('div', { 'data-testid': 'cartesian-grid' }),
+  Tooltip: () => React.createElement('div', { 'data-testid': 'tooltip' }),
+  Legend: () => React.createElement('div', { 'data-testid': 'legend' }),
+  BarChart: ({ children }: any) => React.createElement('div', { 'data-testid': 'bar-chart' }, children),
+  Bar: () => React.createElement('div', { 'data-testid': 'bar' }),
+  PieChart: ({ children }: any) => React.createElement('div', { 'data-testid': 'pie-chart' }, children),
+  Pie: () => React.createElement('div', { 'data-testid': 'pie' }),
+  Cell: () => React.createElement('div', { 'data-testid': 'cell' }),
 }));
 
 // Mock date-fns
