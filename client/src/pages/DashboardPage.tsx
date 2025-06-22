@@ -140,8 +140,7 @@ const DashboardPage = () => {
                       </div>
                       {stat.change && (
                         <div className={`ml-2 flex items-baseline text-sm font-semibold ${
-                          stat.changeType === 'positive' ? 'text-green-600' :
-                          stat.changeType === 'negative' ? 'text-red-600' : 'text-gray-500'
+                          stat.changeType === 'positive' ? 'text-green-600' : 'text-gray-500'
                         }`}>
                           {stat.changeType === 'positive' && <TrendingUp className="w-3 h-3 flex-shrink-0 self-center mr-1" />}
                           <span>{stat.change}</span>
